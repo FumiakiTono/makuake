@@ -5,7 +5,7 @@ lock '3.7.0'
 set :application, 'makuake'
 
 # cloneするgitのレポジトリに変更してください
-set :repo_url, 'git@github.com:Testtarou/hoge.git'
+set :repo_url, 'git@github.com:FumiakiTono/makuake.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
