@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:FumiakiTono/makuake.git'
 set :branch, 'master'
 
 # deploy先のディレクトリに変更してください
-set :deploy_to, '/home/fumiaki/makuake'
+set :deploy_to, '/var/www/makuake'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
