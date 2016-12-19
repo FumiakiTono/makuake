@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+// require jquery-ui-rails
+// require slick/slick.js
+// require slick/slick.min.js
+// require slide.js
