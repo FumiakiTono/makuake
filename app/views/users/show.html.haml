@@ -1,0 +1,81 @@
+.profileArea
+  #profileInArea.clearfix
+    #profileLeft
+      .file_area
+        %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2233/main_2233_464_261.jpg" }
+        / %form#upload_image
+        /   %input
+        /   %input
+    #profileRight
+      .profileNameArea
+        .nameAndSns.clearfix
+          .nameAndSnsLeft
+            %span#yourName 戸野史章
+          .nameAndSnsRight
+            %ul.alertIconSns
+              %li
+                %a
+                  %img
+              %li
+                %a
+                  %img
+              %li
+                %a
+                  %img
+              %li
+                %a
+                  %img
+      .newsListArea
+        .onesection
+          .oneSection01 2015/10/30
+          .oneSection02
+            %a [重要]システムメンテナンスのお知らせ
+        .onesection
+          .oneSection01 2015/06/16
+          .oneSection02
+            %a Makuakeの利用規約及びガイドライン一部変更のお知らせ
+        .onesection
+          .oneSection01 2015/05/27
+          .oneSection02
+            %a Makuake（マクアケ）ニュースレター Vol.57
+      .archiveMoreLink
+        %a.iconArrow24 お知らせ一覧を見る
+#contentWrapper.clearfix
+  #sideNavi
+    %dl.sideNaviOne
+      %dt.sideNaviTitle.sideIconSupt サポーター
+      %dd
+        %a 支援したプロジェクト
+      %dd
+        %a 購入履歴(ショッピング)
+      %dd
+        %a お気に入りのプロジェクト
+      %dd
+        %a メッセージ
+    %dl.sideNaviOne#accountinfo
+      %dt.sideNaviTitle.sideIconSupt アカウント情報
+      %dd
+        %a プロフィール編集
+      %dd
+        %a メール通知設定
+      %dd
+        %a 銀行口座
+    %aside.Security
+      %h2 セキュリティについて
+      %p 当サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。
+      %span
+        %a#aa
+          %img{ alt:"グローバル認証サイト", src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2233/main_2233_464_261.jpg" }
+
+  .rightContentMain
+    #projectDetails
+      %h2.ttlDetails 支援したプロジェクト
+      %a.iconArrow24_02 支援したプロジェクト一覧へ
+      %p.ttlDetailsNo 支援しているプロジェクトはありません
+      %h2.ttlDetails 購入履歴(ショッピング)
+      %a.iconArrow24_02#buyinghistory 購入履歴(ショッピング一覧へ)
+      %p.ttlDetailsNo 購入した商品はありません
+    #projectDetails02
+      %h2.ttlGood お気に入りのプロジェクト
+      %a.iconArrow24_02 お気に入りに追加したプロジェクト一覧へ
+      %p.ttlDetailsNo お気に入りに追加しているプロジェクトはありません。
