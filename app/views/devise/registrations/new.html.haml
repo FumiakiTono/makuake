@@ -1,0 +1,53 @@
+#modalBase
+  .modal02
+    %p.modal02__title 会員登録
+    %button.btnLogin02 ログインはこちら
+    %p.modal02__title-recommend \約1分で登録でき、Makuakeを楽しめます！/
+    .modal02__block
+      .modal02__leftblock
+        %p.modal02__block__title SNSで登録
+        %button.registFacebook Facebook
+        %button.registTwitter Twitter
+        %button.registLINE LINE
+        %button.registAmeba Ameba
+      .modal02__rightblock
+        %p.modal02__block__title メールアドレスで新規登録
+        %form#signUpForm
+          .kurumi
+            .note
+              メールアドレス
+            %input#regist_mail.loginForm
+          .kurumi.kurumi--textright
+            .note.note--textright
+              確認
+            %input#regist_mail2.loginForm
+          .kurumi
+            .note
+              ユーザー名
+              %p.notes
+                *全角・半角
+                %br
+                英数字3-20文字
+            %input#regist_user_name.loginForm
+          .kurumi
+            .note
+              パスワード
+              %p.notes
+                *半角英数字
+                %br
+                6文字以上
+            %input#regist_pass1.loginForm
+          .kurumi.kurumi--textright
+            .note.note--textright
+              確認
+            %input#regist_pass2.loginForm
+          %label.checkbox.errPosRight
+            %input.errPostRight{ type: "checkbox", value: "ok" }
+            %span.checkboxSpan.ErrPoRight Makuakeから新着案件に関する情報やお知らせを受け取る
+          .modal02__agreeBase.checkbox.errPostright#teamAgree02
+            %label.modal02__agreeBase-label
+              %input.modal02__checkbox.errPosRight{ type: "checkbox" }
+              %a
+                利用規約に同意する
+          #err_teamAgree02.formError
+            %input.btnRegit02.btncol_03.errPosRight{ type: "submit", value: "OK" }

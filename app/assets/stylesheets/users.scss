@@ -1,0 +1,287 @@
+@mixin sideNaviOne(){
+  width: 220px;
+  height: 251px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+@mixin dt(){
+  line-height: 43px;
+  border-bottom: 1px solid #ededed;
+  font-size: 1.4rem;
+  text-indent: 40px;
+  padding-top: 3px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  font-size: 15px;
+}
+
+@mixin dd(){
+  line-height: 40px;
+  border-bottom: 1px solid #ededed;
+  font-size: 1.2rem;
+  text-indent: 9px;
+  padding: 5px 0 5px 0;
+}
+
+@mixin a(){
+  color: #333;
+  display: block;
+  // background: ;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+@mixin clearfix(){
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin ttlDetailsNo(){
+  padding: 15px;
+  background: rgb(216, 216, 216);
+  margin-bottom: 45px;
+}
+
+@mixin iconArrow24_02(){
+  position: relative;
+  font-size: 14px;
+  right: -335px;
+  font-weight: normal;
+  letter-spacing: 0;
+  color: #05a1c6;
+}
+
+
+.profileArea{
+  width: 100%;
+  height: 225px;
+  background: #f5f5f5;
+  margin: 0 auto 30px auto;
+
+  #profileInArea{
+    width: 1000px;
+    height: 225px;
+    margin: auto;
+    overflow: hidden;
+
+    #profileLeft{
+      float: left;
+      width: 220px;
+      height: 225px;
+
+      .file_area{
+        display: inline-block;
+        position: relative;
+        left: 20px;
+        top: 20px;
+        width: 175px;
+        height: 175px;
+        border-radius: 2px;
+        // background: url();no-repeat;
+        background-size: 175px 175px;
+
+        img{
+          width: 175px;
+          height: 175px;
+        }
+      }
+    }
+
+    #profileRight{
+      float: left;
+      width: 745px;
+      margin-left: 35px;
+      height: 225px;
+      padding-top: 32px;
+      position: relative;
+
+      .profileNameArea{
+        height: 38px;
+        margin-bottom: 21px;
+
+        .nameAndSnsLeft{
+          float: left;
+
+          #yourName{
+            letter-spacing: 0.1rem;
+            margin-right: 8px;
+            font-size: 1.5rem;
+          }
+        }
+
+        .nameAndSnsRight{
+          float: left;
+
+          li{
+            float: left;
+            margin-right: 11px;
+            position: relative;
+          }
+        }
+      }
+
+      .newsListArea{
+        height: 87px;
+        overflow: auto;
+        font-size: 1.3rem;
+
+        .oneSection{
+          display: none;
+          width: 100%;
+          table-layout: fixed;
+          margin-bottom: 10px;
+        }
+
+        .oneSection01{
+          display: table-cell;
+          width: 100px;
+          color: gray;
+          font-size: 13px;
+        }
+
+        .oneSection02{
+          display: table-cell;
+          line-height: 1.2;
+
+          a{
+            color: #05a1c6;
+            text-decoration: none;
+            outline: none;
+            font-size: 13px;
+          }
+        }
+      }
+
+      .archiveMoreLink{
+        text-align: right;
+        margin-top: 10px;
+        position: absolute;
+        right: 0px;
+
+          a{
+            color: #05a1c6;
+            font-size: 14px;
+          }
+      }
+    }
+  }
+}
+
+#contentWrapper{
+  width: 1000px;
+  margin: 0 auto 100px auto;
+  @include clearfix();
+
+  #sideNavi{
+    float: left;
+    width: 220px;
+
+    .sideNaviOne{
+      @include sideNaviOne();
+
+      dt{
+        @include dt();
+      }
+
+      dd{
+       @include dd();
+
+        a{
+          @include a();
+        }
+      }
+    }
+
+    #accountinfo{
+      height: 200px;
+    }
+
+    .Security{
+      width: 220px;
+      height: 201px;
+      border: 1px solid #ededed;
+
+      h2{
+        background: #ededed;
+        font-size: 13px;
+        padding: 16px 0;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      p{
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        padding: 0 14px;
+      }
+
+      img{
+        width: 100px;
+        height: 50px;
+        position: relative;
+        left: 61px;
+      }
+
+    }
+  }
+
+  .rightContentMain{
+    float: left;
+    width: 745px;
+    height: 745px;
+    margin-left: 35px;
+
+    #projectDetails{
+      width: 745px;
+
+      .ttlDetails{
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 15px;
+        position: relative;
+        color: #333333;
+        display: inline-block;
+      }
+
+      .iconArrow24_02{
+        @include iconArrow24_02();
+      }
+
+      #buyinghistory{
+        right: -310px;
+      }
+
+      .ttlDetailsNo{
+        @include ttlDetailsNo();
+      }
+    }
+
+    #projectDetails02{
+      width: 745px;
+      height: 93px;
+
+      .ttlGood{
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .iconArrow24_02{
+        @include iconArrow24_02();
+        right: -210px;
+      }
+
+      .ttlDetailsNo{
+        @include ttlDetailsNo();
+      }
+    }
+  }
+}
