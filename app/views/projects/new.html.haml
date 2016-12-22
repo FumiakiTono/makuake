@@ -1,0 +1,94 @@
+.main
+  .boxApply
+    %section
+      .titleApply
+        %h3 Makuakeを利用するために相談する
+      %p.caption
+        プロジェクト掲載に関する相談、質問などを以下相談内容の例文を元にご相談ください。
+        %br
+          （返信は3営業日程度を目安としております）
+      #linkForm.form
+        %form#applyForm
+          .formIn
+            .formInMargin
+              .kakushi
+                %label
+                  %input{ type: "radio", value: "1" } 法人
+                %label
+                  %input{ type: "radio", value: "2" } 個人
+              .kakushi
+                %p.inputTitle
+                  氏名
+                  %span.requiredTxt 必須
+                %input.textInput.chkrequired#name{ type: "text", placeholder: "例）幕開太郎" }
+              .kakushi
+                %p.inputTitle
+                  メールアドレス
+                  %span.requiredTxt 必須
+                %input.textInput.chkrequired#name{ type: "text", placeholder: "例）makuake@gmail.com" }
+              .kakushi
+                %p.inputTitle
+                  ご連絡が繋がりやすい電話番号
+                  %span.requiredTxt 必須
+                %input.textInput.chkrequired#name{ type: "text", placeholder: "例）08012345678" }
+              .kakushi
+                %p.inputTitle
+                  実施したいプロジェクトのカテゴリを選択して下さい
+                .select
+                  %select#category
+                    %option 選択してください
+                    %option プロダクト
+                    %option ファッション
+                  .chkselect
+                  %i.arrow
+              .kakushi
+                %p.inputTitle
+                  SNSアカウント
+                  .sns_ex ※SNSアカウントやあなたを表すWebページを記載して頂くと、プロジェクト審査が通りやすくなります。
+                %p.inputTitle
+                  https://www.facebook.com/
+                  %input#sns_facebook.sns
+                %p.inputTitle
+                  https://www.twitter.com/
+                  %input#sns_twitter.sns
+                %p.inputTile
+              .kakushi
+                %p.inputTitle
+                  あなたを表すWebページがございましたらURLを入力してください。
+                %input.textInput.chkurl#url{ type: "text", placeholder: "例）https://www.makuake.com/" }
+                %input.textInput.chkurl#url2{ type: "text", placeholder: "例）https://www.makuake.com/" }
+              .kakushi
+                %p.inputTitle
+                  Makuake or クラウドファンディングを知った、きっかけを教えてください。
+                  %span.requiredTxt 必須
+                .checkLabelInner#media
+                  %label.checkLabel
+                    %input{ type: "radio" } Facebook広告/Twitter広告
+              .kakushi
+                %p.inputTitle
+                  現在の、プロジェクト状況を教えてください
+                  %span.requiredTxt 必須
+                .checkLabelInner#media
+                  %label.checkLabel
+                    %input{ type: "radio" } プロジェクト内容・リターンもイメージできていて、すぐにでもページ制作に取り掛かれる
+                .checkLabelInner#media
+                  %label.checkLabel
+                    %input{ type: "radio" } 詳細は決まっていないので、相談して決めたい
+                .checkLabelInner#media
+                  %label.checkLabel
+                    %input{ type: "radio" } 何から取り掛かっていいか、わからない
+              .kakushi
+                %p.inputTitle.consultation
+                  相談内容
+                  %span.requiredTxt 必須
+                  (最大1000文字)
+                %textarea#content.textArea
+            .otherContact
+              %p プロジェクト掲載以外のご相談に関しましては下記ページからお問い合わせください。
+              %a{ href: "https://www.makuake" }
+                https://www.makuake.com/inquiries/add/
+          %input.subMit{ value: "確認して送信" }
+.bread-crumb-listBase
+  %ul#bread-crumb-list.clearfix
+    %li TOP >
+    %li プロジェクトを相談する

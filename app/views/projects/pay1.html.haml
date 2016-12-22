@@ -1,0 +1,63 @@
+.grayBase
+  #contentWrapper.clearfix
+    %nav.navA
+      %ul.clearfix
+        %li.on 1.支払い方法の選択
+        %li 2.お届け先の入力
+        %li 3.申込内容の変更
+        %li 4.完了
+    %form#support_form
+      %section.box
+        .boxA
+          %h2.ttl
+            選択中のコース
+            %a.linkA 変更する
+        .boxB.dTable
+          .dTableCell
+            %img.imgA{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2262/return_2262_19524.png" }
+          .boxC.dTableCell
+            %em.txtA 29,350円コース(税込)
+            %p.txtB 【ここだけ　10％OFF】Pi SOLO カメラ 1台
+            %p.txtC
+              ■完成品のPi SOLOカメラx1台（一般販売予定価格：32,200円 税抜）・色はブラックとホワイトの2色からお選びいただけます。<付属品1式>レンズキャップおよびワイヤー携帯用クリップ‐オン アクセサリークリップオンアクセサリー三脚エクステンダー保護ポーチクイックスタートガイドマイクロUSB‐タイプAマイクロケーブル説明書ギフトボックス※撮影するには別途マイクロSDカードをご用意いただく必要があります。
+      %section.box
+        .boxA
+          %h2.ttl
+            支払い方法を選択する
+            %span.atnA
+              合計金額が1,000円(税込)以上の場合、クレジットカード以外の決済手段もご利用可能です。
+          %p.atnB
+            支払い方法の詳細については
+            %a
+              ヘルプ
+            を御覧ください
+        .boxB.clearfix
+          %ul.navC.clearfix
+            %li
+              %label.btn_A.navCon
+                %input#card{ type: "radio" }
+                クレジットカード
+            %li
+              %label.btn_B
+                %input#conveni{ type: "radio" }
+                コンビニ払い
+            %li
+              %label.btn_C
+                %input#payeasy{ type: "radio" }
+                銀行振込
+            %li#last_child
+              %label.btn_D
+                %input#label_netbank{ type: "radio" }
+                ネットバンク振込
+          .btn_A_for
+            .upBase02In.clearfix
+              %i.card_visa
+              %i.card_mas
+              %i.card_jcb
+              %i.card_ame
+              %i.card_din
+      %section.box
+      .clearfix
+        %input.nextBtn{ type: "submit", value: "次へ" }
+    .boxHosoku
+      ご確認お願いします

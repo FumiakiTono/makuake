@@ -1,0 +1,262 @@
+@mixin clearfix(){
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin projectBox(){
+  width: 310px;
+  height: 390px;
+  position: relative;
+  float: left;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  background-color: white;
+  border-radius: 4px;
+  border-bottom: 2px solid #e7e7e7;
+}
+
+@mixin projectAside(){
+  width: 284px;
+  position: relative;
+  height: 46px;
+  line-height: 46px;
+  overflow: hideen;
+  border-bottom: 1px solid #ededed;
+  margin: auto;
+}
+
+@mixin PopularAreaAside(){
+  font-size: 16px;
+  display: block;
+  border-radius: 2px;
+  width: 130px;
+  text-align: center;
+  height: 38px;
+  line-height: 36px;
+  margin-left: auto;
+  position: relative;
+  top: -11px;
+}
+
+@mixin iconTag(){
+  &:before{
+    content: "";
+    background: url(http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -3px;
+    left: -22px;
+  }
+}
+
+.grayBase{
+  background-color: #f5f5f5;
+
+  #contentWrapper{
+    width: 1000px;
+    height: 2220px;
+    margin: 0 auto 100px auto;
+    padding: 40px 0;
+    @include clearfix();
+
+    #rightContentMain{
+      float: left;
+      width: 655px;
+      margin-left: 35px;
+
+      #projectBoxEven{
+        margin-right: 0;
+      }
+
+      .projectBox{
+        @include projectBox();
+
+        .projectLinkttlSuccess{
+
+          .ttlNewIconBase{
+            width: 310px;
+            height: 174px;
+            @include successBand();
+          }
+
+          h2{
+            width: 310px;
+            padding: 10px 12px;
+            font-size: 14px;
+            height: 48px;
+            line-height: 1.3;
+            overflow: hidden;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+          }
+        }
+
+          .projectAside{
+            @include projectAside();
+
+            .projectThumb{
+              position: absolute;
+              height: 21px;
+              width: 284px;
+
+              span{
+                position: relative;
+                left: 8px;
+                top: -22px;
+
+              }
+            }
+            .projectTag{
+              position: absolute;
+              top: 19px;
+              text-align: center;
+              left: 62px;
+              line-height: 17px;
+              color: gray;
+              @include iconTag();
+            }
+
+            a{
+              font-size: 12px;
+            }
+          }
+
+          .projectFooter{
+
+            .projectMoney{
+              width: 284px;
+              margin: auto;
+              line-height: 39px;
+              height: 39px;
+              position: relative;
+
+              dl{
+                font-size: 12px;
+                position: relative;
+
+                dt{
+                  position: absolute;
+                  text-indent: 26px;
+                  margin-right: 20px;
+                  color: gray;
+                }
+
+                dd{
+                  position: absolute;
+                  right: 2px;
+                  font-size: 19px;
+                }
+              }
+            }
+
+            .projectGage{
+              width: 284px;
+              height: 28px;
+              line-height: 28px;
+              background-color: #e7e7e7;
+              border-radius: 4px;
+              overflow: hidden;
+              margin: auto;
+            }
+
+            .projectBottom{
+              width: 284px;
+              height: 47px;
+              line-height: 47px;
+              overflow: hidden;
+              margin: auto;
+              position: relative;
+
+              .projectSupporter{
+                position: absolute;
+                left: 0;
+
+                dl{
+                  position: relative;
+                  width: 168px;
+                  height: 47px;
+                  line-height: 47px;
+
+                  dt{
+                    position: absolute;
+                    left: -30px;
+                    font-size: 12px;
+                    width: 91px;
+                    text-indent: 27px;
+                    margin-left: 20px;
+                    color: gray;
+                    // background: url(http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/1981/main_1981_188_106.jpg);
+                  }
+
+                  dd{
+                    position: absolute;
+                    left: 92px;
+                    font-size: 19px;
+                  }
+                }
+              }
+
+              .projectTime{
+                position: absolute;
+                right: 0;
+
+                dl{
+                  position: relative;
+                  width: 116px;
+                  height: 47px;
+                  line-height: 47px;
+
+                  dt{
+                    position: absolute;
+                    font-size: 12px;
+                    text-indent: 25px;
+                    margin-right: 20px;
+                    color: gray;
+                  }
+
+                  dd{
+                    position: absolute;
+                    right: 1px;
+                    font-size: 19px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .pageBase{
+          width: 655px;
+          height: 30px;
+          position: relative;
+          overflow: hidden;
+
+          li{
+            a{
+              display: block;
+              width: 30px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              float: left;
+              font-size: 14px;
+              margin-right: 10px;
+              border-radius: 4px;
+              border-bottom: 2px solid #e7e7e7;
+              background: white;
+              color: #05a1c6;
+            }
+
+            .pageStay{
+              color: white;
+              background: #01b1da;
+            }
+          }
+        }
+      }
+    }
+}
