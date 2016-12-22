@@ -1,0 +1,104 @@
+.grayBase
+  .shopping_bread-crumb-listBase
+    .bread-crumb-listBase
+      %ul#bread-crumb-list.clearfix
+        %li
+          %a
+            %span TOP >
+        %li
+          %a
+            %span プロジェクト一覧 >
+    .tab_wrapper
+      .tabNavigation
+        %ul.tabNav_menu
+          %li
+            %a.tab0n プロジェクト
+          %li
+            %a
+              活動レポート
+              %i.tabnavicon.tabnavicon--yellow.tabnavicon--new
+                NEW!
+          %li
+            %a
+              応援コメント
+              %i.tabnavicon.tabnavicon--yellow
+                6
+  .heroBase
+    %aside.hero
+      #media
+        .videoIn
+          #btn-playBase
+          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2354/main_2354_690_388.jpg" }
+      .pnumBase
+        .pnumBaseUp
+          .stMoney
+            %p.stMoneyTtl
+              %i.stMoneyTtlIcon
+              %span 集まっている金額
+            %p.stMoneyNum 453,600円
+            %p.stMoneyGoal 目標金額 540,000円
+          .stbar
+            .stbarin
+              %p 84%
+          .stSupo
+            %p.stSupoTtl
+              %i.stSupoTtlIcon
+              %span サポーター
+            %p.stSupoNum 24人
+          .stDay
+            %p.stDayttl
+              %i.stDayTtlIcon
+              %span 残り
+            %p.timer.stDayNum#last
+              78
+              %span 日
+        .pnumBaseDown
+          %a#sienBtn
+            %p 支援するコースを選択する
+  .heroBtmBase
+    .heroBtmBaseUp
+      %h2.projectTtl 【第2弾】デザインLED電球Siphon 船舶モチーフ「Grande」先行発売！
+    .heroBtmBaseDown
+      .project_category
+        %a.projectTag
+          %i.icon_tag
+          プロダクト
+      .shareSns
+        %ul.clearfix
+          %li#snsFacebookShare
+            .fb-like.fb_iframe_widget
+              %span
+                %iframe{ src: "https://www.facebook.com/plugins/like.php?app_id=1407034392847669&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FiPrOY23SGAp.js%3Fversion%3D42%23cb%3Df38758648ca7bdc%26domain%3Dwww.makuake.com%26origin%3Dhttps%253A%252F%252Fwww.makuake.com%252Ff2ebe680fa5848%26relation%3Dparent.parent&container_width=0&href=https%3A%2F%2Fwww.makuake.com%2Fproject%2Fsiphon02%2F&layout=button_count&locale=ja_JP&sdk=joey&send=false&show_faces=false&width=111" }
+          %li#snsTweetShare
+          %li#snsGoogleShare
+          %li#snsHatebuShare
+          %li#snsAmebaShare
+          %li#iframeGet
+  #main.clearfix
+    #leftContent
+      .owner-latest
+        %h3.owner-latest_title 実行者の最新投稿
+        %span.owner-latest_date 2016.12.21
+        %a.owner-latest__more
+          %span more >
+        %a.balloon-wrapper
+          .owner-latest_baloon
+            %span.owner-latest-post
+              Siphon Grandeのプロジェクトをやっております戸谷と申します。この度はSiphon Grandeのプロジェクトへのご支援本当にありがとう...
+            .owner-latest_balloon_triangle
+            .owner-latest_balloon_triangle2
+        .owner-info
+          %img.owner-info_thumb{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/user/12799/main_12799_40_40.jpg" }
+          .owner-info_name-wrapper
+            %a.owner-info_name
+              Beat-Sonic 戸谷大地
+          .owner-contact
+            %ul
+            .owner-line-divider
+            %a.owner-contact_ask.open_contact_window
+              %span.owner-contact_title 実行者へ問合せ
+      #leftContentMain.leftTextColor
+      %a#sienBtn03.btncol_03
+      %aside
+
+    = render partial: "common/courses"
