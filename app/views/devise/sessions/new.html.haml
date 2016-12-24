@@ -15,11 +15,11 @@
           %button.registAmeba Ameba
       .modal03__rightblock
         %p.modal03__block__title Makuake IDでログイン
-        %form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .kurumi
             .note
               メールアドレス
-            %input.loginForm
+            = f.email_field :email, { class: "loginForm" }
           .kurumi
             .note
               パスワード
@@ -27,9 +27,9 @@
                 *半角英数字
                 %br
                 6文字以上
-            %input.loginForm#loginpassword
+            = f.password_field :password, autocomplete: "off", id: "loginpassword", class: "loginForm"
           .modal03__btn__block
-            %input.submitBtn03.btncol_03{ type: "submit", value: "ログイン" }
+            = f.submit "ログイン", { class: "submitBtn03 btncol_03"}
             %a.modal03__forgetPass パスワードを忘れた方はこちら
 .bread-crumb-listBase
   %ul#bread-crumb-list.clearfix

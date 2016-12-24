@@ -68,7 +68,7 @@
       width: 655px;
       margin-left: 35px;
 
-      #projectBoxEven{
+      .projectBox:nth-of-type(2n){
         margin-right: 0;
       }
 

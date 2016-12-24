@@ -10,7 +10,8 @@
       .profileNameArea
         .nameAndSns.clearfix
           .nameAndSnsLeft
-            %span#yourName 戸野史章
+            %span#yourName
+              = current_user.name
           .nameAndSnsRight
             %ul.alertIconSns
               %li
