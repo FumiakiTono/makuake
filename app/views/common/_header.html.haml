@@ -2,17 +2,28 @@
   #headerin
     #header-logo
       %img{ alt: "Makuake", src: "" }
-    %form#header-search
-      %input.header-search__input{ placeholder: '"まだここにない"を手に入れよう'  }
+    = form_tag "/projects/search", method: :get, id: "header-search" do
+      %input.header-search__input{ type: "text", name: "keyword", placeholder: '"まだここにない"を手に入れよう'  }
       %input.header-search__submit{ type: "submit", value: "" }
     %ul.header-nav.clearfix
       %li
-        %a.link01#link 探す
+        = link_to "探す", search_projects_path, class: "link01", id: "link"
       %li
-        %a.link02#link 始める
-      %li
-        %a.link03#link Makuakeとは？
-      %li
-        %a.link04.btncol_03 ログイン
-      %li
-        %a.link05.btncol_04 新規登録
+        = link_to "始める", new_project_path, class: "link02"
+      - if user_signed_in?
+        %li
+          メール
+          / %a.link03#link Makuakeとは？
+        %li
+          = link_to "マイページ", user_path(current_user), class: "link03", id: "link"
+          / 通知
+          / = link_to "メール", , class: "link04 btncol_03"
+        %li
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link05 btncol_04"
+      - else
+        %li
+          %a.link03#link Makuakeとは？
+        %li
+          = link_to "ログイン", new_user_session_path, class: "link04 btncol_03"
+        %li
+          = link_to "新規登録", new_user_registration_path, class: "link05 btncol_04"

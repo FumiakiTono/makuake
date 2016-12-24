@@ -28,20 +28,18 @@
             %dl
               %dt 残り
               %dd 10日
-
-
 #PopularBase
   %aside
     .slick-outer
-      .js-slick.slick-initialized.slick-slider
-        %a
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
-        %a
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
-        %a
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
-        %a
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
+      .js-slick.slick-initialized
+        .slider
+          / %a
+          %div
+            %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
+          / %a
+          %div
+            %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/news/4/news_4.gif" }
+          / %a
   %section#PopularArea
     %h2.ttlPopular ピックアッププロジェジェクト
     .projectBoxBase.clearfix
@@ -283,38 +281,8 @@
   %section#newArea
     %h2.ttlNew 最近始まったプロジェクト
     .newBase.clearfix#latest_projects
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
-      %section.projectBox02
-        %a.projectLink02
-          %img{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/project/2346/main_2346_230_129.png" }
-          %h2 ≪ステーキ倶楽部ＢＥＣＯ≫日本一のステーキ専門店を目指すリニューアルプロジェクト
+      - @projects.each do |project|
+        = render partial: "common/projectrecently", locals: { project: project }
     %a.PopularAreaAside more
 
 

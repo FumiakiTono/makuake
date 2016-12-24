@@ -1,7 +1,7 @@
 #projectssideNavi
-  %form#search_form.findForm
+  = form_tag "/projects/search", method: :get, id: "search_form", class: "findForm" do
     .findFormBase
-      %input#keyword.findFormBaseInput
+      %input#keyword.findFormBaseInput{ type: "text", name: "keyword" }
       %input#start_search.findFormBaseSubmit{ value: "検索", type: "submit" }
 
 

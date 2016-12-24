@@ -13,7 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-// require jquery-ui-rails
-// require slick/slick.js
-// require slick/slick.min.js
-// require slide.js
+//= require bootstrap-sprockets
+//= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
+
+var data = { "data-format": "yyyy-MM-dd hh:mm:ss" }
+
+$(function(){
+  $(".datepicker").attr(data);
+  $(".datepicker").datetimepicker();
+  $(".slider").slick({
+    accessibility: true,
+    autoplay: true,
+    dots: true,
+    arrows: true
+  });
+});

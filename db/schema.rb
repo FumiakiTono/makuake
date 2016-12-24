@@ -73,11 +73,11 @@ ActiveRecord::Schema.define(version: 20161220071059) do
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                      null: false
-    t.text     "description",  limit: 65535, null: false
-    t.string   "category",                   null: false
-    t.string   "patern",                     null: false
-    t.date     "finaldate",                  null: false
-    t.integer  "currentprice",               null: false
+    t.text     "description",  limit: 65535
+    t.string   "category"
+    t.string   "patern"
+    t.datetime "finaldate",                  null: false
+    t.integer  "currentprice"
     t.integer  "finalprice",                 null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :projects do
     collection do
       get "search"
+      get "apply"
       get "pay1"
       get "pay2"
       get "pay3"
