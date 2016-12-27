@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220071059) do
+ActiveRecord::Schema.define(version: 20161227083900) do
 
   create_table "course_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "course_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20161220071059) do
     t.index ["name"], name: "index_courses_on_name", using: :btree
     t.index ["price"], name: "index_courses_on_price", using: :btree
     t.index ["project_id"], name: "index_courses_on_project_id", using: :btree
+  end
+
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_favorites_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
   create_table "item_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -99,6 +108,8 @@ ActiveRecord::Schema.define(version: 20161220071059) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "customer_id"
+    t.boolean  "admin_flg"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -107,6 +118,8 @@ ActiveRecord::Schema.define(version: 20161220071059) do
   add_foreign_key "course_users", "courses"
   add_foreign_key "course_users", "users"
   add_foreign_key "courses", "projects"
+  add_foreign_key "favorites", "projects"
+  add_foreign_key "favorites", "users"
   add_foreign_key "item_users", "items"
   add_foreign_key "item_users", "users"
   add_foreign_key "items", "products"

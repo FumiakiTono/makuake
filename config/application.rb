@@ -13,5 +13,7 @@ module Makuake
       g.coffee false
       g.test false
     end
+
+    config.i18n.default_locale = :ja
   end
 end

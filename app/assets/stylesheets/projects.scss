@@ -80,7 +80,31 @@
   }
 }
 
+.toApplyLinkSide_Pos_Top{
+  width: 1000px;
+  height: 0;
 
+  .toApplyLinkSide{
+    width: 62px;
+    height: 320px;
+    position: fixed;
+    background: #fff;
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    z-index: 5;
+    color: #333;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+    text-decoration: none;
+    outline: none;
+
+    .toApplyLinkTxt{
+      position: absolute;
+      left: 23px;
+      top: 21px;
+      font-size: 14px;
+    }
+  }
+}
 
 .heroNew{
   width: 100%;

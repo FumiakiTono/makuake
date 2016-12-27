@@ -37,9 +37,9 @@
   color: white;
   font-size: 24px;
   border-radius: 4px;
-  line-height: 64px;
+  line-height: 38px;
   height: 64px;
-  width: 336px;
+  width: 367px;
   background: #4fc1e9;
   float: right;
   border-bottom: 2px solid #32a9d3;
@@ -362,7 +362,14 @@
       margin-bottom: 35px;
 
       .checkBtn{
-        @include checkBtn();
+
+        #WP-checkout-box{
+
+          input{
+            @include checkBtn();
+            box-sizing: border-box;
+          }
+        }
       }
     }
   }

@@ -17,16 +17,22 @@
 //= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
+//= require header.js
 
 var data = { "data-format": "yyyy-MM-dd hh:mm:ss" }
 
 $(function(){
+
+  // bootstrapのカレンダー
   $(".datepicker").attr(data);
   $(".datepicker").datetimepicker();
+
+  // スライド
   $(".slider").slick({
     accessibility: true,
     autoplay: true,
     dots: true,
     arrows: true
   });
+
 });
