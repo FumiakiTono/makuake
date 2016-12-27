@@ -28,13 +28,16 @@
               お届け先
             %dd
               .boxE.clearfix
-                田中太郎
+                = current_user.name
           %dl
             %dt
               支払い方法
             %dd
               .boxE.clearfix
     #nextBtnArea.clearfix
-      %input.checkBtn{ value: "カード情報の入力", type: "button" }
+      %form.checkBtn{ action: "/projects/pay", method: :post}
+        %script.webpay-button{"data-key" => "#{ENV["webpay_public_key"]}", "data-lang" => "ja", src: "https://checkout.webpay.jp/v3/", "data-text" => "カード情報の入力へ" }
+        %input{ type: "hidden",  name: "customer_id" ,value: current_user.customer_id }
+        %input{ type: "hidden", name: "current_user_id", value: current_user.id }
     .boxHosoku
       ご確認お願いします

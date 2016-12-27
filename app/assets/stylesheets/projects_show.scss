@@ -91,6 +91,27 @@
             border-bottom: 3px solid #f7c600;
           }
         }
+
+        .goodBase_tab{
+          position: absolute;
+          width: 110px;
+          height: 42px;
+          font-size: 11px;
+          right: 0px;
+          border-bottom-style: hidden;
+          text-align: center;
+          color: #000000;
+
+          span{
+            display: inline-block;
+            font-size: 14px;
+            width: 120px;
+            left: -35px;
+            position: absolute;
+            margin-top: 10px;
+            color: #808080;
+          }
+        }
       }
     }
   }
