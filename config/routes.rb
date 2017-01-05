@@ -10,7 +10,14 @@ Rails.application.routes.draw do
       get "apply"
       get "pay1"
       get "pay2"
+      # get "pay3"
+    end
+
+    member do
       get "pay3"
+      post "add" => "favorites#create"
     end
   end
+
+  resources :favorites, only: [:destroy]
 end

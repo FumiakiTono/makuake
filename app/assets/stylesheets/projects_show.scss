@@ -101,6 +101,19 @@
           border-bottom-style: hidden;
           text-align: center;
           color: #000000;
+          cursor: pointer;
+
+          .fa-heart{
+            position: relative;
+            left: -100px;
+            top: 12px;
+          }
+
+          .fa-heart-o{
+            position: relative;
+            left: -80px;
+            top: 12px;
+          }
 
           span{
             display: inline-block;

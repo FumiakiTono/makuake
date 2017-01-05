@@ -24,9 +24,15 @@
               %i.tabnavicon.tabnavicon--yellow
                 6
         .goodBase_tab
-          %a.goodBaseIn2_tab.goodBtnHero_jq_1-on
-            %i.icon_heart_on_tab
-            %span お気に入り追加中
+          - unless current_user.favorites.find_by(project_id: @project.id, user_id: current_user.id)
+            = link_to add_project_path, remote: true, method: :post, class: "goodBaseIn_tab goodBtnHero_jq_1-off" do
+              %i.fa.fa-heart-o
+              %span お気に入り
+          - else
+            = link_to favorite_path(current_user.favorites.find_by(project_id: @project.id, user_id: current_user.id)), remote: true, method: :delete, class: "goodBaseIn2_tab goodBtnHero_jq_1-on" do
+              %i.fa.fa-heart
+              %span お気に入り追加中
+
   .heroBase
     %aside.hero
       #media
@@ -40,7 +46,11 @@
               %i.stMoneyTtlIcon
               %span 集まっている金額
             %p.stMoneyNum 453,600円
-            %p.stMoneyGoal 目標金額 540,000円
+            %p.stMoneyGoal
+              目標金額
+              %span
+                = @project.finalprice
+              %span 円
           .stbar
             .stbarin
               %p 84%
@@ -57,7 +67,7 @@
               78
               %span 日
         .pnumBaseDown
-          %a#sienBtn
+          = link_to pay3_project_path, id: "siteBtn" do
             %p 支援するコースを選択する
   .heroBtmBase
     .heroBtmBaseUp
