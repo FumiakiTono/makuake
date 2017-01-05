@@ -79,4 +79,8 @@
     #projectDetails02
       %h2.ttlGood お気に入りのプロジェクト
       %a.iconArrow24_02 お気に入りに追加したプロジェクト一覧へ
-      %p.ttlDetailsNo お気に入りに追加しているプロジェクトはありません。
+      - if @favorites
+        - @favorites.each do |favorite|
+          = render partial: "common/favorite", locals: { favorite: favorite }
+      - else
+        %p.ttlDetailsNo お気に入りに追加しているプロジェクトはありません。

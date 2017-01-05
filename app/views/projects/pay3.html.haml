@@ -39,5 +39,6 @@
         %script.webpay-button{"data-key" => "#{ENV["webpay_public_key"]}", "data-lang" => "ja", src: "https://checkout.webpay.jp/v3/", "data-text" => "カード情報の入力へ" }
         %input{ type: "hidden",  name: "customer_id" ,value: current_user.customer_id }
         %input{ type: "hidden", name: "current_user_id", value: current_user.id }
+        %input{ type: "hidden", name: "project_id", value: params[:id] }
     .boxHosoku
       ご確認お願いします

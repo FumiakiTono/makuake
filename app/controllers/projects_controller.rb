@@ -18,6 +18,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:id])
+    @favorite = Favorite.new
   end
 
   def new

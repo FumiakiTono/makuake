@@ -14,11 +14,23 @@ class PaymentController < ApplicationController
       customer = webpay.customer.retrieve(params[:customer_id])
     end
 
+    amount = 100
+
     webpay.charge.create(
-      amount: 100,
+      amount: amount,
       currency: "jpy",
       customer: customer.id
     )
+
+    @project = Project.find(params[:project_id])
+    if @project.currentprice == ""
+      @project.currentprice = 0
+      @project.currentprice += amount
+      @project.save
+    else
+      @project.currentprice += amount
+      @project.save
+    end
 
     redirect_to :root
   end
