@@ -20,6 +20,10 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @favorite = Favorite.new
+    @today = Date.today
+    @finaldate = @project.finaldate
+    difdate = @finaldate - @today
+    @difdate = difdate.to_i
   end
 
   def new

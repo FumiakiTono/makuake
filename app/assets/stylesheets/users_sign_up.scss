@@ -71,6 +71,8 @@
 
         .registFacebook{
           background-color: #3b5988;
+          text-align: center;
+          line-height: 46px;
           @include registSns();
           @include boxshadow();
         }

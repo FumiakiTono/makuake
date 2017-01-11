@@ -6,7 +6,7 @@
       .modal03__leftblock
         %p.modal03__block__title SNSでログイン
         %form.snsButton
-          %button.registFacebook Facebook
+          = link_to "Facebook", user_facebook_omniauth_authorize_path, class: "registFacebook"
           %a{ href: "/login/facebook_request_auth" }
         %form.snsButton
           %button.registTwitter Twitter

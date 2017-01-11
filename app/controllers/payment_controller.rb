@@ -3,6 +3,7 @@ require "webpay"
 class PaymentController < ApplicationController
 
   def pay
+    # @project_user = Project_user.new(project_id: params[:project_id], user_id: params[:current_user_id])
     webpay = WebPay.new(ENV["webpay_secret_key"])
 
     if params[:customer_id] == ""
@@ -23,7 +24,7 @@ class PaymentController < ApplicationController
     )
 
     @project = Project.find(params[:project_id])
-    if @project.currentprice == ""
+    if @project.currentprice == nil
       @project.currentprice = 0
       @project.currentprice += amount
       @project.save

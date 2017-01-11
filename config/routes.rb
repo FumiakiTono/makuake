@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   root "projects#index"
   post "/projects/pay" => "payment#pay"
   resources :users, only: [:show]
@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:destroy]
+
 end

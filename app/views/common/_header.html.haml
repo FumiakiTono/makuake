@@ -1,10 +1,11 @@
 %header#header
   #headerin
-    #header-logo
-      %img{ alt: "Makuake", src: "" }
+    = link_to root_path, id: "header-logo", class: "siteId" do
+      = image_tag "makuake.png", class: "makuake"
     = form_tag "/projects/search", method: :get, id: "header-search" do
       %input.header-search__input{ type: "text", name: "keyword", placeholder: '"まだここにない"を手に入れよう'  }
       %input.header-search__submit{ type: "submit", value: "" }
+        %i.fa.fa-search
     %ul.header-nav.clearfix
       %li
         = link_to "探す", search_projects_path, class: "link01", id: "link"
@@ -12,18 +13,11 @@
         = link_to "始める", new_project_path, class: "link02"
       - if user_signed_in?
         %li
-          メール
-          / %a.link03#link Makuakeとは？
+          %img{ src: "//cdn-m.makuake.com/rev_2017/01/10/134526/img/header01/icon_mail_24_01.png" }
         %li
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link05 btncol_04"
+          %img{ src: "//cdn-m.makuake.com/rev_2017/01/10/134526/img/header01/icon_bell_01.png" }
         %li
           %image#user_image.user_image.link03After
-        / %li
-        /   = link_to "マイページ", user_path(current_user), class: "link03", id: "link"
-        /   / 通知
-        /   / = link_to "メール", , class: "link04 btncol_03"
-        / %li
-        /   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link05 btncol_04"
       - else
         %li
           %a.link03#link Makuakeとは？
@@ -32,3 +26,14 @@
         %li
           = link_to "新規登録", new_user_registration_path, class: "link05 btncol_04"
   #myMenuBox
+    -if current_user
+      %ul.headerMyIconClick{ style: "display: none" }
+        %li.mypage
+          = link_to user_path(current_user.id), class: "myLink01" do
+            .mypage_main
+              %img.user_image/
+              %span マイページ
+        %li.help
+          %a.myLink02 ヘルプ
+        %li.logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "myLink03"
