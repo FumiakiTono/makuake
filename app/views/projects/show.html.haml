@@ -25,13 +25,9 @@
                 6
         .goodBase_tab
           - unless current_user.favorites.find_by(project_id: @project.id, user_id: current_user.id)
-            = link_to add_project_path, remote: true, method: :post, class: "goodBaseIn_tab goodBtnHero_jq_1-off" do
-              %i.fa.fa-heart-o
-              %span お気に入り
+            = render partial: "common/create", locals: { project: @project }
           - else
-            = link_to favorite_path(current_user.favorites.find_by(project_id: @project.id, user_id: current_user.id)), remote: true, method: :delete, class: "goodBaseIn2_tab goodBtnHero_jq_1-on" do
-              %i.fa.fa-heart
-              %span お気に入り追加中
+            = render partial: "common/destroy", locals: { project: @project }
 
   .heroBase
     %aside.hero
@@ -45,15 +41,26 @@
             %p.stMoneyTtl
               %i.stMoneyTtlIcon
               %span 集まっている金額
-            %p.stMoneyNum 453,600円
+            %p.stMoneyNum
+              - if @project.currentprice = ""
+                0
+              - else
+                = @project.currentprice
+              %span 円
             %p.stMoneyGoal
               目標金額
               %span
                 = @project.finalprice
               %span 円
           .stbar
-            .stbarin
-              %p 84%
+            - if @project.currentprice?
+              .stbarin{ style: "width: #{@project.currentprice*100/@project.finalprice}%" }
+                %p
+                  = @project.currentprice*100/@project.finalprice
+                %p.perce %
+            - else
+              .stbarin{ style: "width: 0%" }
+                %p 0%
           .stSupo
             %p.stSupoTtl
               %i.stSupoTtlIcon
@@ -64,10 +71,10 @@
               %i.stDayTtlIcon
               %span 残り
             %p.timer.stDayNum#last
-              78
+              = @difdate
               %span 日
         .pnumBaseDown
-          = link_to pay3_project_path, id: "siteBtn" do
+          %a#siteBtn
             %p 支援するコースを選択する
   .heroBtmBase
     .heroBtmBaseUp
@@ -116,3 +123,12 @@
       %aside
 
     = render partial: "common/courses"
+
+    #scrollContent
+      #scrollFb
+        .fab-like
+          %iframe{ src: "https://www.facebook.com/plugins/like.php?app_id=1407034392847669&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FD6ZfFsLEB4F.js%3Fversion%3D42%23cb%3Df277fca5c8e2b%26domain%3Dwww.makuake.com%26origin%3Dhttps%253A%252F%252Fwww.makuake.com%252Ff94b43088e3e5c%26relation%3Dparent.parent&container_width=0&href=https%3A%2F%2Fwww.makuake.com%2Fproject%2Fkiwaka%2F&layout=box_count&locale=ja_JP&sdk=joey&send=false&show_faces=false&width=71" }
+      #scrollTw
+        %iframe#twitter-widget-1{ src: "https://platform.twitter.com/widgets/tweet_button.21a54035d226e6309ff10dbaaff7ca1f.ja.html#dnt=false&hashtags=Makuake&id=twitter-widget-1&lang=ja&original_referer=https%3A%2F%2Fwww.makuake.com%2Fproject%2Fkiwaka%2F&size=m&text=%E6%9C%80%E9%AB%98%E7%B4%9A%E7%B4%A0%E6%9D%90%E3%80%8C%E9%87%91%E8%8F%AF%E5%B1%B1%E7%B9%94%E3%80%8D%E3%82%92%E4%BD%BF%E7%94%A8%E3%80%82%E3%82%B8%E3%83%A5%E3%82%A8%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%90%E3%83%83%E3%82%B0%E3%80%8CKIWAKA%E3%80%8D%E3%82%92%E4%B8%96%E7%95%8C%E3%81%B8%20%7C%20%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%83%95%E3%82%A1%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%20-%20Makuake%EF%BC%88%E3%83%9E%E3%82%AF%E3%82%A2%E3%82%B1%EF%BC%89&time=1484124698903&type=share&url=https%3A%2F%2Fwww.makuake.com%2Fproject%2Fkiwaka%2F%3Futm_source%3Dkiwaka%26utm_medium%3Dsns_share_tw&via=makuake_ca" }
+      #scrollShienBtnBase
+        %a.scrollShienBtn コースを選択

@@ -28,7 +28,8 @@
                 %p.inputTitle
                   期限
                   %span.requiredTxt 必須
-                = f.text_field :finaldate, class: "textInput chkrequired datepicker", id: "finaldate", placeholder: "例）2016.07.03"
+                = f.text_field :finaldate, class: "textInput chkrequired", id: "finaldate", placeholder: "例）2016.07.03"
+                / = f.text_field :finaldate, class: "textInput chkrequired datepicker", id: "finaldate", placeholder: "例）2016.07.03"
               .kakushi
                 %p.inputTitle
                   プロジェクトの詳細

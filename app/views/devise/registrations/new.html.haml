@@ -6,7 +6,8 @@
     .modal02__block
       .modal02__leftblock
         %p.modal02__block__title SNSで登録
-        %button.registFacebook Facebook
+        = link_to "Facebook", user_facebook_omniauth_authorize_path, class: "registFacebook"
+        / %button.registFacebook Facebook
         %button.registTwitter Twitter
         %button.registLINE LINE
         %button.registAmeba Ameba

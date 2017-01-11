@@ -216,12 +216,12 @@
             left: 20px;
 
             .stbarin{
-              width: 84%;
               height: 31px;
               line-height: 31px;
               background-color: #bbf117;
               position: relative;
               border-radius: 2px 0 0 2px;
+              color: black;
 
               p{
                 position: absolute;
@@ -231,6 +231,11 @@
                 width: 85px;
                 color: #333;
 
+              }
+
+              .perce{
+                position: relative;
+                left: 27px;
               }
             }
           }
@@ -317,7 +322,7 @@
           bottom: 10px;
           left: 10px;
 
-          #sienBtn{
+          #siteBtn{
             width: 290px;
             height: 76px;
             line-height: 76px;
@@ -329,6 +334,7 @@
             border-bottom: 4px solid #DEA408;
             font-size: 22px;
             text-align: center;
+            cursor: pointer;
           }
         }
       }
@@ -557,6 +563,49 @@
         border-radius: 4px;
         background: white;
         border-bottom: 2px solid #e7e7e7;
+      }
+    }
+
+    #scrollContent{
+      width: 95px;
+      background: rgb(255, 255, 255);
+      position: fixed;
+      left: 50%;
+      margin-left: -618px;
+      top: 75px;
+      padding: 5px;
+      border-radius: 2px;
+      border-bottom: 2px solid #e7e7e7;
+      z-index: 200;
+
+      #scrollFb{
+        margin-top: 12px;
+        margin-left: 7px;
+
+        iframe{
+          width: 72px;
+          height: 40px;
+          border: none;
+        }
+      }
+
+      #scrollTw{
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        #twitter-widget-1{
+          width: 75px;
+          height: 20px;
+          border: none;
+        }
+      }
+
+      #scrollShienBtnBase{
+        border-top: 1px;
+        margin-top: 14px;
+        padding-top: 7px;
+        margin-bottom: 3px;
       }
     }
   }

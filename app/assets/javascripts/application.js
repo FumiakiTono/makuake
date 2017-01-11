@@ -18,7 +18,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require header.js
-//= require favorites.js
+//= require scroll.js
 
 var data = { "data-format": "yyyy-MM-dd hh:mm:ss" }
 
