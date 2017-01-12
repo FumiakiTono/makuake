@@ -8,8 +8,9 @@ $(function(){
     }
   });
 
-  $("#siteBtn").on("click", function(){
-    $("html, body").animate({ scrollTop: $(".returnTtl").offset().top-20 }, 800);
+  $(document).on("turbolinks:load", function(){
+    $("#siteBtn").on("click", function(){
+      $("html, body").animate({ scrollTop: $(".returnTtl").offset().top-20 }, 800);
+    });
   });
-
 });
