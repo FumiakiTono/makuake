@@ -8,10 +8,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag "//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"
   %body
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    = render partial: "common/header"
-    = yield
-    = render partial: "common/footer"
+    .wrapper{ style: "min-width: 960px" }
+      .alert.alert-warning{ role: "alert", style: "background: #ffe600; text-align: center;" } ログインに成功しました
+      / .alert.alert-warning{ role: "alert", style: "background: #ffe600; text-align: center;" } ログアウトに成功しました
+      = render partial: "common/header"
+      = yield
+      = render partial: "common/footer"

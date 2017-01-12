@@ -19,21 +19,6 @@
 //= require bootstrap-datetimepicker
 //= require header.js
 //= require scroll.js
-
-var data = { "data-format": "yyyy-MM-dd hh:mm:ss" }
-
-$(function(){
-
-  // bootstrapのカレンダー
-  $(".datepicker").attr(data);
-  $(".datepicker").datetimepicker();
-
-  // スライド
-  $(".slider").slick({
-    accessibility: true,
-    autoplay: true,
-    dots: true,
-    arrows: true
-  });
-
-});
+//= require slide.js
+//= require alert.js
+//= require calender.js
