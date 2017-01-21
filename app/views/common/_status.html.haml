@@ -1,0 +1,9 @@
+- if current_user
+  = link_to following_user_path do
+    %strong#following
+      = user.following.count
+    フォロー
+  = link_to follower_user_path do
+    %strong#followers
+      = user.follower.count
+    フォロワー

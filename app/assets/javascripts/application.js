@@ -18,7 +18,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require header.js
-//= require scroll.js
 //= require slide.js
 //= require alert.js
 //= require calender.js
+//= require scroll.js
