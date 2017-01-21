@@ -11,21 +11,10 @@
         .nameAndSns.clearfix
           .nameAndSnsLeft
             %span#yourName
-              = current_user.name
-          .nameAndSnsRight
-            %ul.alertIconSns
-              %li
-                %a
-                  %img
-              %li
-                %a
-                  %img
-              %li
-                %a
-                  %img
-              %li
-                %a
-                  %img
+              = @user.name
+          .status
+            = render partial: "common/status", locals: { user: @user }
+            = render partial: "common/follow_form", locals: { user: @user }
       .newsListArea
         .onesection
           .oneSection01 2015/10/30
