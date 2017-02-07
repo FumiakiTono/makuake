@@ -111,8 +111,8 @@
         .owner-info
           %img.owner-info_thumb{ src: "http://s3-ap-northeast-1.amazonaws.com/static.makuake-ca.com/upload/user/12799/main_12799_40_40.jpg" }
           .owner-info_name-wrapper
-            - if @project.user.name
-              = link_to "#{@project.user.name}", user_path(@project.user_id), class: "owner-info_name"
+            / - if @project.user.name
+            /   = link_to "#{@project.user.name}", user_path(@project.user_id), class: "owner-info_name"
           .owner-contact
             %ul
             .owner-line-divider
