@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  require "instagram"
+  require "json"
 
   def index
     @projects = Project.all
@@ -24,6 +26,11 @@ class ProjectsController < ApplicationController
     @finaldate = @project.finaldate
     difdate = @finaldate - @today
     @difdate = difdate.to_i
+    unless Instagram.user_recent_media(ENV["user_id"], {count: 3})
+      @users = ""
+    else
+      @users = Instagram.user_recent_media(ENV["user_id"], {count: 3})
+    end
   end
 
   def new
