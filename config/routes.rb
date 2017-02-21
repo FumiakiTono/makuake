@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     collection do
       get "search"
       get "apply"
-      get "pay1"
-      get "pay2"
     end
 
     member do

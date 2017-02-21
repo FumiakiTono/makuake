@@ -9,8 +9,9 @@ class PaymentController < ApplicationController
     if params[:customer_id] == ""
       customer = webpay.customer.create(card: params["webpay-token"])
       user = User.find(params[:current_user_id])
-      user.customer_id = customer.id
-      user.save
+      user.save(customer_id: "customer.id")
+      # user.customer_id = customer.id
+      # user.save
     else
       customer = webpay.customer.retrieve(params[:customer_id])
     end

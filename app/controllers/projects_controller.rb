@@ -43,12 +43,6 @@ class ProjectsController < ApplicationController
     redirect_to root_path
   end
 
-  def pay1
-  end
-
-  def pay2
-  end
-
   def pay3
   end
 
